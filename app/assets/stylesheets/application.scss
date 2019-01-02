@@ -17,6 +17,24 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
+body {
+  font-family: 'PT Serif', serif;
+}
+
+a {
+  color: #00A6D7;
+}
+
+table {
+  width: 90%;
+  //border: solid 1px;
+}
+
+th, td {
+  border: solid #E5E5E5 1px;
+  padding: 20px;
+}
+
 .message-window {
 	margin-right: 50px;
 	margin-bottom: 20px;

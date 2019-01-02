@@ -10,8 +10,12 @@ class Chatroom < ApplicationRecord
 	def self.direct_message_for_users(users)
 		user_ids = users.map(&:id).sort
 		name = "DM:#{user_ids.join(":")}"
+		user1 = users[0]
+		user2 = users[1]
+
+		
 		if chatroom = direct_messages.where(name: name).first
-			chatroom 
+			chatroom
 		else 
 			# create a new chatroom 
 			chatroom = new(name: name, direct_message: true)
