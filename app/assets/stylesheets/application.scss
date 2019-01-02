@@ -16,3 +16,21 @@
 
 @import "bootstrap";
 @import "bootstrap-sprockets";
+
+.message-window {
+	margin-right: 50px;
+	padding-bottom: 20px;
+	border: solid black 1px;
+}
+
+.messages {
+	padding: 15px 0px 10px 20px;
+}
+
+.message-form {
+	padding: 0px 50px 0px 20px;
+}
+
+.room-name {
+	padding: 10px 0px 0px 0px;
+}

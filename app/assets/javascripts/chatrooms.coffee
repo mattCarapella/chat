@@ -8,7 +8,6 @@ $(document).on "turbolinks:load", ->
 		e.preventDefault()
 		chatroom_id = $("[data-behavior='messages']").data("chatroom-id")
 		body 				= $("#message_body")
-		console.log "SUBMITTED FORM"
 
 		App.chatrooms.send_message(chatroom_id, body.val())
-		body.val("")	
+		body.val("")
