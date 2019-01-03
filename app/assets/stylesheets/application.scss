@@ -21,10 +21,6 @@ body {
   font-family: 'PT Serif', serif;
 }
 
-a {
-  color: #00A6D7;
-}
-
 table {
   width: 90%;
   //border: solid 1px;
@@ -33,6 +29,13 @@ table {
 th, td {
   border: solid #E5E5E5 1px;
   padding: 20px;
+}
+
+.main-index{
+
+  a {
+    color: white;
+  }
 }
 
 .message-window {

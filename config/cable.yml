@@ -7,4 +7,4 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:cae371f94be086db5e6a69f92ee012fd@spinyfin.redistogo.com:11750/

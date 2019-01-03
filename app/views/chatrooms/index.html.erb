@@ -2,21 +2,25 @@
 
 <h1>Chatrooms</h1>
 
-<table>
-  <tbody>
-    <% @chatrooms.each do |chatroom| %>
-      <tr>
-        <td><h5><%= chatroom.name %></h5></td>
-        <td><%= link_to 'Show', chatroom %></td>
-        <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-        <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td> 
-        <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="main-index">  
+  <table>
+    <tbody>
+      <% @chatrooms.each do |chatroom| %>
+        <tr>
+          <td><h5><%= chatroom.name %></h5></td>
+          <td><%= link_to 'Show', chatroom %></td>
+          <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
+          <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Join', chatroom_chatroom_users_path(chatroom), method: :post %></td> 
+          <td><%= link_to 'Leave', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Chatroom', new_chatroom_path %>
+  <button type="button" class="btn btn-primary">
+    <%= link_to 'New Chatroom', new_chatroom_path %>
+  </button>
+</div>
