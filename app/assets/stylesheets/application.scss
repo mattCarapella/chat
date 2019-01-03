@@ -23,7 +23,6 @@ body {
 
 table {
   width: 90%;
-  //border: solid 1px;
 }
 
 th, td {
@@ -39,7 +38,6 @@ html, body {
 
 container-fluid {
   min-height: 100%
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -81,9 +79,6 @@ container-fluid {
 .index-main {
   margin-bottom: -9999px;
   padding-bottom: 9999px;
-
- 
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,11 +96,11 @@ container-fluid {
   }
 
   .show-message-form {
-    margin-bottom: 50px;
-    padding: 0px 50px 0px 20px;
-    position: fixed;
-    bottom: 0;
-    width: 75%;
+    // margin-bottom: 50px;
+    // padding: 0px 50px 0px 20px;
+    // position: fixed;
+    // bottom: 0;
+    // width: 75%;
   }
 
   .show-room-name {

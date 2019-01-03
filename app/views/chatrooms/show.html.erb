@@ -8,7 +8,11 @@
     </div>
 
     <div class="col-xs-10 show-main">
-      <div class="room-name">
+    	<div class="show-links"> 
+				<%= link_to '< Back', chatrooms_path %>
+    	</div>
+
+      <div class="show-room-name">
 				<h2><%= @chatroom.name %></h2>
 			</div>
 			<% unread_messages = false %>
@@ -22,19 +26,15 @@
 						<%= render message %>
 					<% end %>
 				</div>
+				<div class="show-message-form">
+					<%= form_for [@chatroom, Message.new] do |f| %>
+				  	<%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+					<% end %>
+				</div>
 			</div> 
 
-			<div class="show-message-form">
-				<%= form_for [@chatroom, Message.new] do |f| %>
-				  <%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
-				<% end %>
-			</div>
+
 
     </div>
   </div>
 </div>
-
-
-
-
-s
