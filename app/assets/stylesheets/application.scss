@@ -28,62 +28,92 @@ table {
 
 th, td {
   border: solid #E5E5E5 1px;
-  padding: 20px;
+  padding: 6px;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+html, body {
+  height: 100%;
+}
+
+container-fluid {
+  min-height: 100%
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .sidebar-main {
-  height: 100%;
-  position: fixed;
-  top: 50px;
-  left: 0;
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
+  background: #4D394B;
+  color: rgb(202,196,201);
+
+  .sidebar-items {
+
+  }
+
+  .sidebar-channels {
+
+  }
+
+  .sidebar-channels {
+
+  }
+
+  .sidebar-users {
+
+  }
+
+  .sidebar-listitem {
+    list-style-type: none;
+    margin-left: -30px;
+
+    a {
+      color: white;
+    }
+  }
 }
 
-.sidebar-items {
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.index-main {
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
+
+ 
 
 }
 
-.sidebar-channels {
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
+.show-main {
+  margin-bottom: -9999px;
+  padding-bottom: 9999px;
+
+  .show-message-window {
+    background: #F2F2F2;
+  }
+
+  .show-messages {
+    padding: 15px 0px 10px 20px;
+  }
+
+  .show-message-form {
+    margin-bottom: 50px;
+    padding: 0px 50px 0px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 75%;
+  }
+
+  .show-room-name {
+    padding: 10px 0px 0px 0px;
+  }
 }
 
-.sidebar-channels {
-
-}
-
-.sidebar-users {
-
-}
-
-.sidebar-listitem {
-  list-style-type: none;
-  margin-left: -30px;
-}
-
-.main-index{
-
-
-}
-
-.message-window {
-	margin-right: 50px;
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	border: solid black 1px;
-  background: #F2F2F2;
-}
-
-.messages {
-	padding: 15px 0px 10px 20px;
-}
-
-.message-form {
-	padding: 0px 50px 0px 20px;
-}
-
-.room-name {
-	padding: 10px 0px 0px 0px;
-}
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .strike {
   display: block;
