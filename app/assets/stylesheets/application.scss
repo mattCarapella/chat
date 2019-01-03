@@ -18,7 +18,7 @@
 @import "bootstrap-sprockets";
 
 body {
-  font-family: 'PT Serif', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 table {
@@ -29,6 +29,34 @@ table {
 th, td {
   border: solid #E5E5E5 1px;
   padding: 20px;
+}
+
+.sidebar-main {
+  height: 100%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+}
+
+.sidebar-items {
+
+}
+
+.sidebar-channels {
+
+}
+
+.sidebar-channels {
+
+}
+
+.sidebar-users {
+
+}
+
+.sidebar-listitem {
+  list-style-type: none;
+  margin-left: -30px;
 }
 
 .main-index{

@@ -1,0 +1,25 @@
+<div class="col-sm-2 sidebar-full" style="position: fixed; top: 10px; left: 0;">
+  <% if user_signed_in? %>
+    <div class="sidebar-channels">
+      <h4>Channels</h4>
+      <ul>
+        <% current_user.chatrooms.public_channels.each do |chatroom| %>
+          <div class="listitem">
+            <li><%= link_to '# ' + chatroom.name, chatroom, data: {behavior: "chatroom-link", chatroom_id: chatroom.id} %></li>
+          </div>
+        <% end %>
+      </ul>  
+    </div>
+    <hr>
+    <div class="sidebar-direct-messages">
+      <h4>In this conversation</h4>
+      <ul>
+        <% (User.all - [current_user]).each do |user| %>
+          <div class="listitem">  
+            <li><%= link_to user.username, direct_message_path(user.id), data: {behavior: "chatroom-link", chatroom_id: Chatroom.direct_message_for_users([current_user, user]).id } %></li>
+          </div>
+        <% end %>
+      </ul>    
+    </div>
+  <% end %>
+</div>

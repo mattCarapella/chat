@@ -4,6 +4,8 @@ class Chatroom < ApplicationRecord
 	has_many :users, through: :chatroom_users
 	has_many :messages, dependent: :destroy
 
+	belongs_to :creator, class_name: "User", :foreign_key => "user_id"
+
 	scope :public_channels, -> { where(direct_message: false) }
 	scope :direct_messages, -> { where(direct_message: true)  }
 
