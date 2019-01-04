@@ -1,26 +1,26 @@
-<% if user_signed_in? %>
-  <div id="sidebar-items">
+<div id="sidebar-items">
 
-    <div id="sidebar-header"> 
-      <h1><%= link_to "ACchat", root_path %></h1>
-    </div>
+  <div id="sidebar-header"> 
+    <h1><%= link_to "ACchat", root_path %></h1>
+  </div>
 
-    <div id="sidebar-user">
-      <% if user_signed_in? %>
-        <p>
-          <span id="sidebar-username">
-            Welcome, <%= link_to current_user.username, edit_user_registration_path %>
-          </span>
-          <span id="sidebar-user-logout">
-            (<em><%= link_to "Logout", destroy_user_session_path, method: :delete %></em>)
-          </span>
-        </p>
-      <% else %>    
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-        <li><%= link_to "Login", new_user_session_path %></li>
-      <% end %>
-    </div> 
-
+  <div id="sidebar-user">
+    <% if user_signed_in? %>
+      <p>
+        <span id="sidebar-username">
+          Welcome, <%= link_to current_user.username, edit_user_registration_path %>
+        </span>
+        <span id="sidebar-user-logout">
+          (<em><%= link_to "Logout", destroy_user_session_path, method: :delete %></em>)
+        </span>
+      </p>
+    <% else %>    
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+    <% end %>
+  </div> 
+  
+  <% if user_signed_in? %>
     <div id="sidebar-channels">
       <h4>Your Channels</h4>
       <ul>
@@ -42,6 +42,5 @@
         <% end %>
       </ul>  
     </div>
-
-  </div>
-<% end %>
+  <% end %>
+</div>

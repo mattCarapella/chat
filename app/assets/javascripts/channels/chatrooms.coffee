@@ -22,7 +22,9 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
 			else
 				App.last_read.update(data.chatroom_id)
 
-			active_chatroom.append("<div><strong>#{data.username}:</strong> #{data.body}</div>")
+			
+			active_chatroom.append("<li class='left'><div class='message-listitem'><div class='message-header'><span class='message-user'>#{data.username}</span></div><div class='message-body'><p>#{data.body}</p></div></div></li>")
+
 			scroll()
 
 

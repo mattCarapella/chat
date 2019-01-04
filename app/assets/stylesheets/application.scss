@@ -29,7 +29,6 @@ html, body {
   width: 100%;
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #sidebar {
@@ -48,7 +47,6 @@ html, body {
       padding-bottom: 20px;
       a { color: white; text-decoration: none; }
       a:hover { color: #DFDEDE; }
-
     }
 
     #sidebar-user {
@@ -88,12 +86,14 @@ html, body {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #show-main {
+
   width: calc(100% - 250px);
   min-height: 100vh;
   transition: all 0.3s;
   position: absolute;
   top: 0;
   right: 0;
+  background: #EEEDED;
 
   #show-header {
     background: #FCFACA;
@@ -101,7 +101,6 @@ html, body {
     width: 84%;
     padding-top: 10px;
     text-align: left;
-
     a { color: black; text-decoration: none; }
     a:hover { color: #494600; }
   }
@@ -112,7 +111,6 @@ html, body {
     color: #636363;
     padding-left: 15px;
     letter-spacing: 4px;
-    
   }
 
   #show-links {
@@ -120,20 +118,52 @@ html, body {
     font-weight: 800;
   }
 
-
   #show-message-window {  
-    overflow: scroll;
     padding-left: 30px;
     margin-bottom: 50px;
   }
 
-  #show-message {
-    padding-left: 30px;
+  .message-listitem {
+
+    .message-user {
+      font-size: 0.9em;
+      font-weight: 800;
+      color: #7C7B7B;
+    }
+
+    .message-time {
+     // color: #848484;
+    }
+
+    .message-body {
+      font-size: 1.3em;
+    }
+
+    li {
+      list-style-type: none;
+    }
   }
 
-  #message-listitem {
-    padding-left: 30px;
-    padding-bottom: 10px;
+  .left {
+    padding: 5px 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background: -webkit-linear-gradient(left,rgba(215,229,228,1),rgba(255,255,255,0)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(255,255,255,0),rgba(215,229,228,1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(255,255,255,0),rgba(215,229,228,1)); /*Fx 3.6-15*/
+    background: linear-gradient(to right, rgba(215,229,228,1), rgba(255,255,255,0)); /*Standard*/
+    text-align: left;
+  }
+
+  .right {
+    padding: 5px 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background: -webkit-linear-gradient(left,rgba(255,255,255,0),rgba(228,215,229,1)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(228,215,229,1),rgba(255,255,255,0)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(228,215,229,1),rgba(255,255,255,0)); /*Fx 3.6-15*/
+    background: linear-gradient(to right,rgba(255,255,255,0),rgba(228,215,229,1)); /*Standard*/
+    text-align: right;
   }
 
   #show-footer {
@@ -144,37 +174,26 @@ html, body {
     box-sizing: border-box;
   }
 
-  ol {
-    padding-bottom: 100px;
-  }
+}
 
-  // #message-listitem {
-  //   padding-left: 30px;
-  //   padding-bottom: 10px;
-
-  //   #message-user {
-  //     color: red;
-  //     font-size: 1.3em;
-  //     font-weight: bolder;
-  //     padding-right: 15px;
-  //   }
-
-  //   #message-time {
-  //     color: #848484;
-  //   }
-
-  //   #message-body {
-  //     font-size: 1.1em;
-  //     padding-top: 5px;
-  //   }
-  // }
+li {
+  list-style-type: none;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-#index {
+#index-main {
 
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 0px 0px 20px;
+  background: #F9F9F9;
+  
   table {
     width: 90%;
   }
@@ -183,26 +202,41 @@ html, body {
     border: solid #E5E5E5 1px;
     padding: 6px;
   }
-}
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+  a {
+    color: #8A8888;
+  }
 
-.left {
-  padding: 5px 10px;
-  background: -webkit-linear-gradient(left,rgba(215,229,228,1),rgba(255,255,255,0)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(right,rgba(255,255,255,0),rgba(215,229,228,1)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(right,rgba(255,255,255,0),rgba(215,229,228,1)); /*Fx 3.6-15*/
-  background: linear-gradient(to right, rgba(215,229,228,1), rgba(255,255,255,0)); /*Standard*/
-  text-align: left;
-}
+  a:hover {
+    color: #4D4D4D;
+  }
 
-.right {
-  padding: 5px 10px;
-  background: -webkit-linear-gradient(left,rgba(255,255,255,0),rgba(228,215,229,1)); /*Safari 5.1-6*/
-  background: -o-linear-gradient(right,rgba(228,215,229,1),rgba(255,255,255,0)); /*Opera 11.1-12*/
-  background: -moz-linear-gradient(right,rgba(228,215,229,1),rgba(255,255,255,0)); /*Fx 3.6-15*/
-  background: linear-gradient(to right,rgba(255,255,255,0),rgba(228,215,229,1)); /*Standard*/
-  text-align: right;
+  #index-table {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  #index-table-body {
+
+  }
+
+  #index-table-rows {
+    letter-spacing: 4px;
+  }
+
+  #index-new-room-btn {
+    font-size: 1.4em;
+    a { color: black; }
+  }
+
+  #index-new-room-form {
+    padding-bottom: 20px;
+  }
+
+  #index-form-back {
+    font-size: 0.7em;
+    padding-left: 5px;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

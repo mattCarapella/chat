@@ -1,34 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid" style="margin-top: 50px">
-  <div class="row">
+<div class="wrapper" style="margin-top: 50px">
 
-    <div class="col-xs-2 sidebar-main">
-      <%= render 'chatrooms/indexsidebar' %>
-    </div>
 
-    <div class="col-xs-10 index-main">
-      <h1>Channels</h1>
-      <table>
-        <tbody>
-          <% @chatrooms.each do |chatroom| %>
-            <tr>
-              <td><h5><%= chatroom.name %></h5></td>
-              <td><%= link_to 'Join', chatroom %></td>
-              <td><%= link_to 'Add', chatroom_chatroom_users_path(chatroom), method: :post %></td> 
-              <td><%= link_to 'Remove', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
-              <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
-              <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <br />
-      
-      <%= link_to 'Make a new channel', new_chatroom_path, id: "new_room_link", remote: true %>  
-    
-    </div>
+  <nav id="sidebar">
+    <%= render 'chatrooms/indexsidebar' %>
+  </nav>
+
+  <div id="index-main">   
+    <h1>Channels</h1>
+    <table id="index-table">
+      <tbody id="index-table-body">
+        <% @chatrooms.each do |chatroom| %>
+          <tr id="index-table-rows">
+            <td><h5><%= chatroom.name %></h5></td>
+            <td><%= link_to 'Join', chatroom %></td>
+            <td><%= link_to 'Add', chatroom_chatroom_users_path(chatroom), method: :post %></td> 
+            <td><%= link_to 'Remove', chatroom_chatroom_users_path(chatroom), method: :delete %></td>
+            <td><%= link_to 'Edit', edit_chatroom_path(chatroom) %></td>
+            <td><%= link_to 'Destroy', chatroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  
+    <span id="index-new-room-btn">  
+      <%= link_to 'Create a New Channel', new_chatroom_path, id: "new_room_link", remote: true %>  
+    </span>
+
+  </div>
 
   </div>
 </div>
