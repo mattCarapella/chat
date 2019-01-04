@@ -17,146 +17,164 @@
 @import "bootstrap";
 @import "bootstrap-sprockets";
 
-body {
-  font-family: 'Lato', sans-serif;
+html, body {
+  height: 100%;
+  //font-family: 'Lato', sans-serif;
+  //font-family: 'EB Garamond', serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-table {
-  width: 90%;
+.wrapper {
+  display: flex;
+  width: 100%;
 }
 
-th, td {
-  border: solid #E5E5E5 1px;
-  padding: 6px;
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-html, body, .container-fluid, .row {
-  height: 100%;
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-.sidebar-main {
-  position: fixed;
-  width: 200px;
-  height: 100%;
-  background: #4D394B;
-  color: rgb(202,196,201);
-
-  .sidebar-items {
-
-  }
-
-  .sidebar-channels {
-
-  }
-
-  .sidebar-channels {
-
-  }
-
-  .sidebar-users {
-
-  }
-
-  .sidebar-listitem {
-    list-style-type: none;
-    margin-left: -30px;
-
-    a {
-      color: white;
-    }
-  }
-
-}
-
-
-
-.content {
-  width: 1440px;
-  height: 300px;
-  position: relative;
-  background: #f55;
-
-}
-
-
-.show-main {
- 
-  margin-left: 200px;
-  margin-bottom: 10px;
-  height: 100%;
-  width: auto;
-  position: relative;
-  background: #f00;
-  //overflow: auto;
-  //z-index: 1;
-
-  .show-message-window {
-    background: #F2F2F2;
-    position: static;
-    height: 863px;
-    //margin-bottom: 75px;
-    padding-bottom: 75px;
-   // overflow: scroll;
-
-
-     .show-message-form {
-    z-index: 1;  
-    //margin-bottom: 20px;
-    //padding: 0px 50px 0px 0px;
-  //   position: fixed;
-  //   bottom: 0;
-  //   width: 92%;
-  }
-  }
-
-  .show-messages {
-    padding: 15px 0px 10px 20px;
-  }
-
-
-
-  .show-room-name {
-    width: 100%;
-    background: white;
+#sidebar {
+    width: 250px;
     position: fixed;
-    z-index: 1;
-    padding-left: 10px;
-    padding-bottom: 10px;
-  }
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #4D394B;
+    color: white;
+    transition: all 0.3s;
+    padding: 20px 0px 0px 20px;
 
-  .show-links {
+    #sidebar-header {
+      padding-bottom: 20px;
+      a { color: white; text-decoration: none; }
+      a:hover { color: #DFDEDE; }
+
+    }
+
+    #sidebar-user {
+      padding-bottom: 20px;
+    }
+
+    #sidebar-username{
+      padding-right: 10px;
+    }
+
+    #sidebar-user-logout {
+      font-weight: 1;
+      color: #888888;
+      a { 
+        color: #888888; 
+        font-weight: 1;
+      }
+    }
+
+    #sidebar-channels {
+      padding-bottom: 20px;     
+    }
+
+    #sidebar-users {
+      padding-bottom: 20px;
+    }
+
+    #sidebar-listitem {
+      list-style-type: none;
+      margin-left: -30px;  
+    }
+
+    a { color: rgb(202,196,201); }
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#show-main {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  #show-header {
+    background: #FCFACA;
+    position: fixed;
+    width: 84%;
     padding-top: 10px;
-    //padding: 10px 0px 0px 10px;
+    text-align: left;
+
+    a { color: black; text-decoration: none; }
+    a:hover { color: #494600; }
   }
 
-  .message-listitem {
+  #show-roomname {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #636363;
+    padding-left: 15px;
+    letter-spacing: 4px;
+    
+  }
+
+  #show-links {
+    font-size: 1.4em;
+    font-weight: 800;
+  }
+
+
+  #show-message-window {
+    
+    overflow: scroll;
+  }
+
+  #show-message {
+    padding-left: 30px;
+  }
+
+  #show-footer {
+    margin-top: 20px;
+    bottom: 0;
+    position: fixed;
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+
+
+  #message-listitem {
+
 
     padding-bottom: 10px;
 
-    .message-user {
+    #message-user {
+      color: red;
       font-size: 1.3em;
       font-weight: bolder;
       padding-right: 15px;
     }
 
-    .message-time {
+    #message-time {
       color: #848484;
     }
 
-    .message-body {
+    #message-body {
       font-size: 1.1em;
       padding-top: 5px;
     }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+#index {
+
+  table {
+    width: 90%;
+  }
+
+  th, td {
+    border: solid #E5E5E5 1px;
+    padding: 6px;
   }
 }
 

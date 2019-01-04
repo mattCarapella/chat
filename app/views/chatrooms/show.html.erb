@@ -1,42 +1,80 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid" style="margin-top: 50px">
-  <div class="row">
+<div class="wrapper" style="margin-top: 50px">
+	
+	<nav id="sidebar">
+    <%= render 'chatrooms/indexsidebar' %>
+	</nav>
 
-    <div class="sidebar-main">
-      <%= render 'chatrooms/indexsidebar' %>
-    </div>
+	<div id="show-main">
+		<nav class="navbar navbar-expand-lg navbar-light" id="show-header">
 
-		<div class="show-main">
-	    <div class="content">
-	      <div class="show-room-name">
-		      <div class="show-links"> 
-						<%= link_to '< Back', chatrooms_path %>
-		    	</div>
-					<h2>#<%= @chatroom.name %></h2>
-				</div>
-				<% unread_messages = false %>
-				<div class="show-message-window">	
-					<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>' class="show-messages">
-						<% @messages.each do |message| %> 			
-							<% if !unread_messages && @chatroom_user.last_read_at < message.created_at %> 
-								<% unread_messages = true %>
-								<div class="strike"><span>Unread Messages</span></div>
-							<% end %>
-							
-							<%= render message %>
-							
-						<% end %>
+
+			
+			<div class="container-fluid">
+			
+				<span id="show-links">
+					<%= link_to '<<', chatrooms_path %>
+				</span>
+
+				<span id="show-roomname">   
+					#<%= @chatroom.name %>
+				</span>
+
+			</div> 
+
+		</nav>
+    
+
+		
+		<% unread_messages = false %>
+
+		<div id="show-message-window">	
+			<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
+				<% @messages.each do |message| %> 			
+					<% if !unread_messages && @chatroom_user.last_read_at < message.created_at %> 
+						<% unread_messages = true %>
+						<div class="strike"><span>Unread Messages</span></div>
+					<% end %>						
+					<div id="show-message">	
+						<%= render message %>
 					</div>
-					<div class="show-message-form">
-						<%= form_for [@chatroom, Message.new] do |f| %>
-					  	<%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
-						<% end %>
-					</div>
-				</div> 
+				<% end %>
+			</div>		
+		</div> 
 
-	    </div>
+		<div id="show-footer">
+			<%= form_for [@chatroom, Message.new] do |f| %>
+		  	<%= f.text_area :body, rows: 1, class: "form-control", autofocus: true %>
+			<% end %>
 		</div>
-
+	
   </div>
+
 </div>
+
+
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    var socket = io();
+
+    $("#form_id").submit(function(){
+        var value = $("#user_input").val();
+        if(value.length > 0 && value != "Default text"){
+            socket.emit('message from me', value);
+            $('#messages').append($('<li class="right">').text(value));
+            $('#user_input').val('');
+            scroll();
+        }
+        return false;
+    });
+
+    socket.on('message', function(msg){
+        $('#messages').append($('<li class="left">').text(msg));
+    });
+
+    function scroll() {
+        window.scrollTo(0, document.body.scrollHeight);
+    };
+
+</script>
