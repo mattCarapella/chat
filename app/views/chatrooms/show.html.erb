@@ -31,15 +31,18 @@
 
 		<div id="show-message-window">	
 			<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
-				<% @messages.each do |message| %> 			
+				
+				<% @messages.each do |message| %> 				
 					<% if !unread_messages && @chatroom_user.last_read_at < message.created_at %> 
 						<% unread_messages = true %>
 						<div class="strike"><span>Unread Messages</span></div>
 					<% end %>						
-					<div id="show-message">	
-						<%= render message %>
-					</div>
+					
+					<span id="message-list-item">	
+						<p><%= render message %></p>
+					</span>
 				<% end %>
+
 			</div>		
 		</div> 
 

@@ -23,9 +23,15 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
 				App.last_read.update(data.chatroom_id)
 
 			active_chatroom.append("<div><strong>#{data.username}:</strong> #{data.body}</div>")
+			scroll()
+
 
 		else
 			$("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bolder").css("color", "#8500FF")
 
 	send_message: (chatroom_id, message) -> 
 		@perform "send_message", {chatroom_id: chatroom_id, body: message}
+
+	scroll: () ->
+		window.scrollTo(0, document.body.scrollHeight);
+         
