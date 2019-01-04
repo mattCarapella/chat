@@ -32,19 +32,22 @@ th, td {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-html, body {
+html, body, .container-fluid, .row {
   height: 100%;
-}
-
-container-fluid {
-  min-height: 100%
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+
+
 .sidebar-main {
-  margin-bottom: -9999px;
-  padding-bottom: 9999px;
+  position: fixed;
+  width: 200px;
+  height: 100%;
   background: #4D394B;
   color: rgb(202,196,201);
 
@@ -72,39 +75,88 @@ container-fluid {
       color: white;
     }
   }
+
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
-.index-main {
-  margin-bottom: -9999px;
-  padding-bottom: 9999px;
+
+.content {
+  width: 1440px;
+  height: 300px;
+  position: relative;
+  background: #f55;
+
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .show-main {
-  margin-bottom: -9999px;
-  padding-bottom: 9999px;
+ 
+  margin-left: 200px;
+  margin-bottom: 10px;
+  height: 100%;
+  width: auto;
+  position: relative;
+  background: #f00;
+  //overflow: auto;
+  //z-index: 1;
 
   .show-message-window {
     background: #F2F2F2;
+    position: static;
+    height: 863px;
+    //margin-bottom: 75px;
+    padding-bottom: 75px;
+   // overflow: scroll;
+
+
+     .show-message-form {
+    z-index: 1;  
+    //margin-bottom: 20px;
+    //padding: 0px 50px 0px 0px;
+  //   position: fixed;
+  //   bottom: 0;
+  //   width: 92%;
+  }
   }
 
   .show-messages {
     padding: 15px 0px 10px 20px;
   }
 
-  .show-message-form {
-    // margin-bottom: 50px;
-    // padding: 0px 50px 0px 20px;
-    // position: fixed;
-    // bottom: 0;
-    // width: 75%;
-  }
+
 
   .show-room-name {
-    padding: 10px 0px 0px 0px;
+    width: 100%;
+    background: white;
+    position: fixed;
+    z-index: 1;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  .show-links {
+    padding-top: 10px;
+    //padding: 10px 0px 0px 10px;
+  }
+
+  .message-listitem {
+
+    padding-bottom: 10px;
+
+    .message-user {
+      font-size: 1.3em;
+      font-weight: bolder;
+      padding-right: 15px;
+    }
+
+    .message-time {
+      color: #848484;
+    }
+
+    .message-body {
+      font-size: 1.1em;
+      padding-top: 5px;
+    }
   }
 }
 
