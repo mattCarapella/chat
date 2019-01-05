@@ -94,6 +94,7 @@ html, body {
   top: 0;
   right: 0;
   background: #EEEDED;
+  bottom: 0;
 
   #show-header {
     background: #FCFACA;
@@ -118,12 +119,17 @@ html, body {
     font-weight: 800;
   }
 
-  #show-message-window {  
+  #show-message-window { 
     padding-left: 30px;
     margin-bottom: 50px;
+    margin-top: 70px;
+
+
   }
 
   .message-listitem {
+
+
 
     .message-user {
       font-size: 0.9em;
