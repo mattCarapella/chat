@@ -1,9 +1,11 @@
-<div class="message-listitem">
-	<div class="message-header">
-		<span class="message-user"><%= message.user.username %></span>
-	
+<li class='left'>	
+	<div class="message-listitem">
+		<div class="message-header">
+			<span class="message-user"><%= message.user.username %></span>
+		
+		</div>
+		<div class="message-body">
+			<p><%= message.body %></p>
+		</div>
 	</div>
-	<div class="message-body">
-		<p><%= message.body %></p>
-	</div>
-</div>
+</li>

@@ -120,7 +120,7 @@ html, body {
   }
 
   #show-message-window { 
-    padding-left: 30px;
+    padding-left: 10px;
     margin-bottom: 50px;
     margin-top: 70px;
 
@@ -128,8 +128,6 @@ html, body {
   }
 
   .message-listitem {
-
-
 
     .message-user {
       font-size: 0.9em;
@@ -151,13 +149,13 @@ html, body {
   }
 
   .left {
-    padding: 5px 10px;
+    padding: 5px 10px 0px 0px;
     margin-top: 3px;
     margin-bottom: 3px;
-    background: -webkit-linear-gradient(left,rgba(215,229,228,1),rgba(255,255,255,0)); /*Safari 5.1-6*/
-    background: -o-linear-gradient(right,rgba(255,255,255,0),rgba(215,229,228,1)); /*Opera 11.1-12*/
-    background: -moz-linear-gradient(right,rgba(255,255,255,0),rgba(215,229,228,1)); /*Fx 3.6-15*/
-    background: linear-gradient(to right, rgba(215,229,228,1), rgba(255,255,255,0)); /*Standard*/
+    background: -webkit-linear-gradient(left,rgba(243, 243, 243  ,1),rgba(255,255,255,0)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(243, 243, 243, 0),rgba(215,229,228,1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(243, 243, 243, 0),rgba(215,229,228,1)); /*Fx 3.6-15*/
+    background: linear-gradient(to right, rgba(243, 243, 243, 1), rgba(255,255,255,0)); /*Standard*/
     text-align: left;
   }
 
