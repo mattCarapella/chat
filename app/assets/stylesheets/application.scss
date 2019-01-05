@@ -21,7 +21,8 @@ html, body {
   height: 100%;
   //font-family: 'Lato', sans-serif;
   //font-family: 'EB Garamond', serif;
-  font-family: 'Roboto', sans-serif;
+
+  
 }
 
 .wrapper {
@@ -32,6 +33,7 @@ html, body {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #sidebar {
+    font-family: 'Roboto', sans-serif;
     width: 250px;
     position: fixed;
     top: 0;
@@ -44,9 +46,12 @@ html, body {
     padding: 20px 0px 0px 20px;
 
     #sidebar-header {
-      padding-bottom: 20px;
+      font-family: 'Montserrat', sans-serif !important;
+      letter-spacing: 3px;
+      padding-bottom: 0px;
       a { color: white; text-decoration: none; }
       a:hover { color: #DFDEDE; }
+      h1 { font-size: 1.6em; }
     }
 
     #sidebar-user {
@@ -79,14 +84,21 @@ html, body {
       margin-left: -30px;  
     }
 
-    a { color: rgb(202,196,201); }
+    a { 
+      //color: rgb(202,196,201); 
+      color: #BABABA;
+    }
+
+    h4 {
+      font-size: 1.1em;
+    }
 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #show-main {
-
+  //font-family: 'Roboto', sans-serif;
   width: calc(100% - 250px);
   min-height: 100vh;
   transition: all 0.3s;
@@ -96,6 +108,7 @@ html, body {
   background: #EEEDED;
 
   #show-header {
+    font-family: 'Montserrat', sans-serif;
     background: #FCFACA;
     position: fixed;
     width: 84%;
@@ -121,6 +134,7 @@ html, body {
   #show-message-window {  
     padding-left: 30px;
     margin-bottom: 50px;
+    margin-top: 55px;
   }
 
   .message-listitem {
@@ -128,7 +142,7 @@ html, body {
     .message-user {
       font-size: 0.9em;
       font-weight: 800;
-      color: #7C7B7B;
+      color: #000000;
     }
 
     .message-time {
@@ -137,6 +151,7 @@ html, body {
 
     .message-body {
       font-size: 1.3em;
+      font-weight: 300;
     }
 
     li {
